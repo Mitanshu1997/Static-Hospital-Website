@@ -1,0 +1,235 @@
+<html>
+<head>
+	<title> NM Hospital </title>
+	
+	<link href="css/style.css" type="text/css" rel="stylesheet">
+
+	<script>
+
+	
+	function check()
+	{
+	
+		var fnv = document.getElementById("fn");
+		var fname = fnv.value;
+		
+		var lnv = document.getElementById("ln");
+		var lname = lnv.value;
+		
+		var letters = /^[A-Za-z]+$/;
+		
+		var em = document.getElementById("ei");
+		var x = em.value;
+		var atpos = x.indexOf("@");
+		var dotpos = x.lastIndexOf(".");
+		
+		var mobn = document.getElementById("mn");
+		var mob = mobn.value;
+		
+		var sexv = document.getElementById("sex");
+		var sx = sexv.value;
+		
+		var adv = document.getElementById("ad");
+		var apd = adv.value;
+		
+		if(fname.length == 0)
+		{
+			alert("The First Name field is a required field");
+		}
+		else
+		{
+		
+		if(fname.match(letters))
+		{
+			if(lname.length == 0)
+			{
+				alert("The Last Name field is a required field");
+			}
+			else
+			{
+			if(lname.match(letters))
+			{
+			
+				if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) 
+				{
+					alert("Not a valid e-mail address");
+					return false;
+				}
+				else
+				{
+					if(isNaN(mob))
+					{
+						alert("Only numbers are allowed in the Mobile Number field");
+						return false;			
+					}
+					else
+					{
+						if(mob.length!=10)
+						{
+						alert("Mobile number should be minimum of 10 characters");
+						return false;			
+						}
+						else
+						{
+							if(sx == '-- Sex --')
+							{
+								alert("The sex field is a required field");	
+							}
+							else
+							{
+								if(apd.length == 0)
+								{
+									alert("The Date field is a required field");	
+								}
+								else
+								{
+								return true;
+								}
+							}
+						}
+					}
+				}
+			}
+			else
+			{
+				alert("The Last Name should only contain characters");
+				return false;
+			}
+			}
+		}
+		else
+		{
+			alert("The First Name should only contain characters");
+			return false;
+		}
+		}
+
+	}	
+	
+	
+	function yo()
+	{
+		alert("yo");
+	}
+	</script>
+	
+</head>
+<body>
+
+	
+	<div class="top">
+		<div>
+		 Contact Us +91 98765 43210 / 00 | nmh@hospital.com 
+		</div>
+	</div>
+	
+	<div class="logo">
+		<div>
+			<table>
+				<tr>
+					<td width="600px" style="font-size:50px;font-family:forte;"> <font color="#428bca"> NM  </font><font color="#000"> Hospital</font> </td>
+					<td> <br> <br>
+						<font size="4px"> 
+							<a href="index.html">HOME</a> 
+							<a href="about.html">ABOUT US</a>  
+							<a href="service.html">SERVICE</a>
+							<a href="doctor.html">DOCTORS</a> 
+							<a href="contact.html">CONTACT US</a>
+						</font>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	
+	<div class="middle">
+		<div style="background-image:url('img/a.jpg');">
+		<p>
+			<br> <br>
+					Health Care Services  <br>
+			<font size="5px"> We Care About Your Health </font>
+		</p> 
+		</div>
+	</div>
+	
+	<div class="bottom"><div>
+			<table border="0">
+				<tr>
+					<td width="700px">
+						<h1 style="color:#428bca">Welcome to NM Hospital</h1>
+
+						We Have Medicare Plan Options for You! </font> <br> <br>
+
+						When it comes to choosing a hospital, one thing is clear: quality counts. 
+						And a century-long tradition of providing medical care in a comfortable and convenient environment means peace of mind for the thousands of patients who are cared for by the doctors and nurses at the NM Hospital each year.
+					<br>
+					</td>
+					
+					
+					<td> </td>
+				</tr>
+			
+				
+			</table>
+		</div>
+	</div>
+	
+	<div class="bottom_up">
+		<div>
+				Make an Appointment
+				
+				<table>
+										
+					<tr>
+						<td width="50px"> </td>
+						<td>	<input id = "fn" type="text" placeholder="First Name">
+						<td> 	<input id = "ln" type="text" placeholder="Last Name">
+					</tr>
+					<tr height="30px">
+						
+					</tr>
+					<tr>
+						<td width="50px"> </td>
+						<td>	<input id = "ei" type="text" placeholder="Email Id">
+						<td> 	<input id = "mn" type="text" placeholder="Mobile No">
+					</tr>
+					
+					<tr height="30px">
+						
+					</tr>
+					<tr>
+						<td width="50px"> </td>
+						<td>	<select id = "sex" > <option> -- Sex -- </option> <option> Male </option> <option> Female </option> </select>
+						<td> 	<input id = "ad" type="text" placeholder="appointment date">
+					</tr>
+					
+						<tr height="30px">
+						
+					</tr>
+					<tr>
+						<td width="50px"> </td>
+						<td colspan="2">	<textarea placeholder="Message"> </textarea>
+					</tr>
+					
+						<tr height="30px">
+						
+					</tr>
+					<tr>
+						<td  	width="50px"> </td>
+						<td colspan="2">	<button onclick = "check()"> SUBMIT </button>
+					</tr>
+				</table>
+				
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	<div class="nav_down">
+		<div>
+		 NM Hospital, site designed & developed by Arjun, Shruti, Mitanshu 
+		</div>
+	</div>
+	
